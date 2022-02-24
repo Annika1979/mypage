@@ -5,11 +5,19 @@ function App() {
   return (
     <div className="App">
       <h1>My Page</h1>
-      <nav>
-        <Link to="/home">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contacts">Contacts</Link>
-        <Link to="/blog">Blog</Link>
+      <nav className="navigation">
+        <Link to="/home" className="link">
+          Home
+        </Link>
+        <Link to="/about" className="link">
+          About
+        </Link>
+        <Link to="/contacts" className="link">
+          Contacts
+        </Link>
+        <Link to="/blog" className="link">
+          Blog
+        </Link>
       </nav>
       <Outlet />
     </div>
