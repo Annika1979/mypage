@@ -25,14 +25,14 @@ function App() {
             </li>
             <li className="nav__item">
               {" "}
-              <Link to="/blog" className="link">
-                Blog
+              <Link to="/comments" className="link">
+                Comments
               </Link>
             </li>
           </ul>
         </nav>
       </header>
-      {/* introduction */}
+
       <section className="intro" id="home">
         <h1 className="section__title section__title-intro">
           Hi, I am <br />
@@ -47,9 +47,6 @@ function App() {
           alt="picture of Annika in her own creation"
         ></img>
       </section>
-      {/* My services */}
-
-      {/* About me  */}
 
       <Outlet />
     </div>

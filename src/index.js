@@ -6,7 +6,7 @@ import App from "./App";
 import Home from "./routes/Home";
 import About from "./routes/About";
 import Contacts from "./routes/Contacts";
-import Blog from "./routes/Blog";
+import Comments from "./routes/Comments";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,7 +16,7 @@ ReactDOM.render(
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/comments" element={<Comments />} />
         </Route>
       </Routes>
     </BrowserRouter>
