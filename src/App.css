@@ -270,3 +270,22 @@ ul li {
     min-width: 200px;
   }
 }
+
+.commentary--header {
+  color: var(--clr-accent);
+}
+.commentary {
+  background-color: var(--clr-dark);
+
+  color: var(--clr-light);
+}
+.commentary-list {
+  color: var(--clr-dark);
+}
+.my--commentary {
+  background-color: var(--clr-dark);
+  background-size: cover;
+  color: var(--clr-light);
+  text-align: center;
+  height: 500px;
+}

@@ -17,28 +17,30 @@ const Comments = () => {
   };
 
   return (
-    <>
-      <div>
-        <h3>Write your comments here</h3>
-      </div>
-      <form onSubmit={addItem}>
-        <label>
-          <input
-            name="item"
-            type="text"
-            value={itemName}
-            onChange={(e) => setItemName(e.target.value)}
-            placeholder="write your comments"
-          />
-          then press enter
-        </label>
-      </form>
-      <ul>
-        {items.map((item) => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
-    </>
+    <div className="commentary">
+      <section className="my--commentary">
+        <div className="commentary--header">
+          <h2>Leave your comments here</h2>
+        </div>
+        <form onSubmit={addItem}>
+          <label>
+            <input
+              name="item"
+              type="text"
+              value={itemName}
+              onChange={(e) => setItemName(e.target.value)}
+              placeholder="speak your mind"
+            />
+            then press enter
+          </label>
+        </form>
+        <ul className="commentary-list">
+          {items.map((item) => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>
+      </section>
+    </div>
   );
 };
 
