@@ -61,21 +61,17 @@ strong {
 
 /* Buttons */
 
-.btn {
-  display: inline-block;
-  padding: 0.5em 2.5em;
-  background: var(--clr-accent);
-  color: var(--clr-dark);
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+button {
+  background-color: var(--clr-accent);
+  margin-right: 10px;
+  margin-bottom: 20px;
+  width: 100px;
+  height: 50px;
+  font: var(--ff-primary);
   font-weight: var(--fw-bold);
-  transition: transform 200ms ease-in-out;
 }
 
-.btn:hover {
+button:hover {
   transform: scale(1.1);
 }
 /* Typography */
@@ -120,11 +116,7 @@ h3 {
   font-family: var(--ff-secondary);
   margin-bottom: 1em;
 }
-/* header */
 
-/* header {
-  padding: 1em;
-} */
 ul li {
   display: inline;
   padding-right: 10px;
@@ -271,21 +263,48 @@ ul li {
   }
 }
 
-.commentary--header {
+.contacts--header {
   color: var(--clr-accent);
 }
-.commentary {
+.contacts--header,
+h2 {
+  padding-bottom: 20px;
+}
+.contacts {
   background-color: var(--clr-dark);
-
   color: var(--clr-light);
 }
-.commentary-list {
+.contacts-list {
   color: var(--clr-dark);
 }
-.my--commentary {
+.my--contacts {
   background-color: var(--clr-dark);
   background-size: cover;
   color: var(--clr-light);
   text-align: center;
   height: 500px;
+}
+.contacts--input {
+  margin-right: 5px;
+}
+
+.comments-section {
+  background-color: var(--clr-dark);
+  background-size: cover;
+  color: var(--clr-light);
+  text-align: center;
+  height: 600px;
+  padding-top: 2.3em;
+  font: var(--ff-primary);
+}
+
+.comments-header::after,
+.contacts-h2::after {
+  content: "";
+  display: block;
+  width: 5em;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background: var(--clr-light);
+  opacity: 0.25;
 }

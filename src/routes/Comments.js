@@ -1,44 +1,62 @@
 import { useState } from "react";
+import { Statistics } from "../Statistics";
 
 const Comments = () => {
-  const [items, setItems] = useState([]);
-  const [itemName, setItemName] = useState("");
+  const [clicks, setClicks] = useState({
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  });
+  const Button = (props) => {
+    const { onClick, text } = props;
+    return <button onClick={onClick}> {text} </button>;
+  };
 
-  const addItem = (event) => {
-    event.preventDefault();
-    setItems([
-      ...items,
-      {
-        id: items.length,
-        name: itemName,
-      },
-    ]);
-    setItemName("");
+  const Header = (props) => <p>{props.value}</p>;
+
+  const handleGoodClick = () => {
+    const newClicks = {
+      good: clicks.good + 1,
+      neutral: clicks.neutral,
+      bad: clicks.bad,
+    };
+    setClicks(newClicks);
+  };
+
+  const handleNeutralClick = () => {
+    const newClicks = {
+      good: clicks.good,
+      neutral: clicks.neutral + 1,
+      bad: clicks.bad,
+    };
+    setClicks(newClicks);
+  };
+
+  const handleBadClick = () => {
+    const newClicks = {
+      good: clicks.good,
+      neutral: clicks.neutral,
+      bad: clicks.bad + 1,
+    };
+    setClicks(newClicks);
   };
 
   return (
-    <div className="commentary">
-      <section className="my--commentary">
-        <div className="commentary--header">
-          <h2>Leave your comments here</h2>
+    <div>
+      <section className="comments-section">
+        <div>
+          <h2 className="comments-header">
+            <Header value="What do you think about my page?" />
+          </h2>
+          <Button onClick={handleGoodClick} text="Good" />
+
+          <Button onClick={handleNeutralClick} text="Neutral" />
+
+          <Button onClick={handleBadClick} text="Bad" />
         </div>
-        <form onSubmit={addItem}>
-          <label>
-            <input
-              name="item"
-              type="text"
-              value={itemName}
-              onChange={(e) => setItemName(e.target.value)}
-              placeholder="speak your mind"
-            />
-            then press enter
-          </label>
-        </form>
-        <ul className="commentary-list">
-          {items.map((item) => (
-            <li key={item.id}>{item.name}</li>
-          ))}
-        </ul>
+        <div>
+          <Statistics value={clicks} />
+        </div>
       </section>
     </div>
   );
