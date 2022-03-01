@@ -41,6 +41,7 @@ function App() {
         <p className="section__subtitle section__subtitle--intro">
           multitasker
         </p>
+
         <img
           className="annikapic"
           src={Annika}
